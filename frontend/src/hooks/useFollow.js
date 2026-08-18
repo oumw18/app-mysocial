@@ -42,7 +42,7 @@ export function useCreateFollow({ onSuccess } = {}) {
 }
 
 const deleteFollow = async (payload) => {
-  const { data } = await api.delete("/follows", payload);
+  const { data } = await api.delete("/follows", { data: payload });
   return data;
 };
 

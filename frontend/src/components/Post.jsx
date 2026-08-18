@@ -18,6 +18,7 @@ export default function Post({
   followers,
   likes,
   createdAt,
+  showFollow = true,
 }) {
   const normalizedLikeCount =
     typeof likeCount === "number" ? likeCount : (likes?.length ?? 0);
@@ -50,17 +51,22 @@ export default function Post({
             {user?.id === authorId ? (
               <h2 className="card-title">{username}</h2>
             ) : (
-              <a href={`/user-profile/${authorId}`} className="card-title hover:text-accent">
+              <a
+                href={`/user-profile/${authorId}`}
+                className="card-title hover:text-accent"
+              >
                 {username}
               </a>
             )}
             •<span>{formatDate(createdAt)}</span>
           </div>
-          <FollowBtn
-            followers={followers}
-            authorId={authorId}
-            currentUserId={user?.id}
-          />
+          {showFollow && (
+            <FollowBtn
+              followers={followers}
+              authorId={authorId}
+              currentUserId={user?.id}
+            />
+          )}
           {user?.id === authorId && (
             <button
               className="btn btn-sm btn-error btn-outline"

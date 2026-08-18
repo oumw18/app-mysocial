@@ -78,7 +78,7 @@ export function useCreateComment({ onSuccess } = {}) {
   });
 }
 
-const deleteComment = async (commentId) => {
+const deleteComment = async ({ commentId }) => {
   const { data } = await api.delete(`/comments/${commentId}`);
   return data;
 };

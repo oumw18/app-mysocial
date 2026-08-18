@@ -1,7 +1,7 @@
 import prisma from "../config/db.js";
 
 export const createFollow = async (req, res) => {
-  const { followerId, followingId } = req.body;
+  const { followerId, followingId } = req.body ?? {};
 
   if (!followerId || !followingId) {
     return res
@@ -41,7 +41,7 @@ export const createFollow = async (req, res) => {
 };
 
 export const deleteFollow = async (req, res) => {
-  const { followerId, followingId } = req.body;
+  const { followerId, followingId } = req.body ?? {};
 
   if (!followerId || !followingId) {
     return res
