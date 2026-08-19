@@ -44,7 +44,7 @@ export default function Profil() {
           </div>
         </section>
 
-        <section className="tabs tabs-border">
+        <section className="tabs tabs-border w-full">
           <input
             type="radio"
             name="my_tabs_2"

@@ -55,7 +55,7 @@ export default function UserProfile() {
           />
         </section>
 
-        <section className="space-y-4">
+        <section className="flex h-full flex-col items-center justify-center gap-3">
           {posts.length === 0 ? (
             <p>Aucun post</p>
           ) : (

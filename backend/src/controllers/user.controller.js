@@ -204,8 +204,6 @@ export const getAllUser = async (req, res) => {
       select: {
         id: true,
         username: true,
-        followers: true,
-        following: true,
       },
     });
     res.status(200).json(users);

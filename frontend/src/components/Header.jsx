@@ -1,4 +1,5 @@
 import { useAuth } from "../hooks/useAuth";
+import Search from "./Search";
 
 export default function Header() {
   const { data: user } = useAuth();
@@ -8,19 +9,20 @@ export default function Header() {
     window.location.href = "/login";
     return;
   };
+
   return (
     <div className="navbar bg-base-100 shadow-sm">
-      <div className="flex-1">
+      <div className="navbar-start">
         <a className="btn btn-ghost text-xl" href="/">
           My<span className="text-accent">Social</span>
         </a>
       </div>
-      <div className="flex gap-2">
-        <input
-          type="text"
-          placeholder="Search"
-          className="input w-24 md:w-auto"
-        />
+      {/* search */}
+      <div className="navbar-center">
+        <Search />
+      </div>
+      {/* profil */}
+      <div className="navbar-end">
         <div className="dropdown dropdown-end">
           <div
             tabIndex={0}

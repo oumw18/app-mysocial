@@ -13,3 +13,13 @@ export function useUserProfile(userId) {
     enabled: Boolean(userId),
   });
 }
+
+export function useUserSearch() {
+  return useQuery({
+    queryKey: ["users"],
+    queryFn: async () => {
+      const { data } = await api.get("/auth");
+      return data;
+    },
+  });
+}

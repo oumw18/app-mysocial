@@ -41,10 +41,8 @@ export default function Post({
     deletePost.mutate(postId);
   };
 
-  // const { userId } = useParams();
-
   return (
-    <div className="card bg-base-200 w-full shadow-sm md:w-3xl">
+    <div className="card bg-base-200 w-full shadow-sm md:w-2xl">
       <div className="card-body">
         <div className="flex justify-between">
           <div className="flex items-center gap-2">
@@ -83,7 +81,7 @@ export default function Post({
             <img
               src={`http://localhost:3000/api/${image}`}
               alt="image post"
-              className="rounded-md"
+              className="size-2/3 rounded-md"
             />
           )}
         </figure>
